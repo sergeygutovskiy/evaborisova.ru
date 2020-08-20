@@ -17,7 +17,7 @@ $(function() {
 		if (curBot == 100)
 		{
 			hidePagination();
-			$(".body-background").css("filter", "blur(8px)");
+			$(".body-blur").css("opacity", "1");
 		}
 		else if (curBot == 200)
 		{
@@ -40,7 +40,7 @@ $(function() {
 		if (curBot == 0)
 		{
 			showPagination();
-			 $(".body-background").css("filter", "blur(0)");
+			 $(".body-blur").css("opacity", "0");
 		}
 		else if (curBot == 100)
 		{

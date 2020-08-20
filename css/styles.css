@@ -83,6 +83,17 @@ body {
 	transition: 800ms ease;
 }
 
+.body-blur {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+	backdrop-filter: blur(8px); 
+	
+	opacity: 0;
+	transition: 800ms ease;
+}
+
 a {
 	color: #F6F6F6;
 	text-decoration: none;
