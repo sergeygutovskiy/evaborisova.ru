@@ -9,7 +9,7 @@ $(function() {
 		paginationNext();
 
 		scrollable = false;
-		$(".backgrounds").css("transform", "translateY(-" + curBot + "vh)");
+		$(".backgrounds").css("transform", "translateY(-" + curBot + "%)");
 		setTimeout(function() {
 			scrollable = true
 		}, 1000);
@@ -32,7 +32,7 @@ $(function() {
 		paginationPrev();
 
 		scrollable = false;
-		$(".backgrounds").css("transform", "translateY(-" + curBot + "vh)");
+		$(".backgrounds").css("transform", "translateY(-" + curBot + "%)");
 		setTimeout(function() {
 			scrollable = true
 		}, 1000);
