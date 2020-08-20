@@ -56,7 +56,7 @@ $(function() {
 	})
 
 	$(document).on("touchmove", function(event) {
-		//event.preventDefault();
+		event.preventDefault();
 		var curY = event.originalEvent.touches[0].screenY;
 		if (stY - curY > 50 && curBot <= 300 && scrollable)
 			navDown();
@@ -72,7 +72,7 @@ $(function() {
 	})
 
 	$(document).on("mousewheel DOMMouseScroll", function(event) {
-		//event.preventDefault();
+		event.preventDefault();
 		if ((event.originalEvent.wheelDelta < 0 || event.originalEvent.detail > 0) && curBot <= 300 && scrollable)
 			navDown();
 		else if ((event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) && curBot > 0 && scrollable)
