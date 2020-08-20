@@ -97,6 +97,7 @@
 
 		<script>
 			var pagination = $(".pagination");
+			const mobileWidth = 768;
 
 			function paginationNext()
 			{
@@ -116,7 +117,7 @@
 
 			function showPagination()
 			{
-				if (!$("nav").hasClass("nav-mobile"))
+				if (window.innerWidth >= mobileWidth)
 				{
 					pagination.show();
 				}
@@ -179,11 +180,6 @@
 				<div class="gallery__button swiper-button-next"></div>
 			</section>
 
-			<section class="backgrounds__item backgrounds__item-services">
-				<div class="backgrounds__back-color"></div>
-				3
-			</section>
-
 			<script>
 				var swiper = new Swiper('.swiper-container', {
 					navigation: {
@@ -196,6 +192,28 @@
 					}
 				});
 			</script>
+		
+			<section class="backgrounds__item backgrounds__item-contacts contacts">
+				<div class="backgrounds__back-color"></div>
+			
+				<div class="contacts__container">
+					<form class="contacts__form">
+						<input type="text" placeholder="Имя">
+						<input type="text" placeholder="Телефон">
+						<input type="text" placeholder="Почта">
+
+						<button>
+							Отправить
+						</button>
+					</form>
+					<ul class="contacts__list">
+						<li class="golden-rain">+7 (967) 330 74 62</li>
+						<li class="golden-rain">г. Санкт-Петербург, ул. Профессора Попова, д. 26</li>
+						<li>Для связи с нами: <span class="golden-rain"> EvaBorisova2018@yandex.ru </span></li>
+						<li>Мы в instagram: <span class="golden-rain"> @anastasiiam514 </span></li>
+					</ul>
+				</div>
+			</section>
 		</section>
 	</main>
 </body>
