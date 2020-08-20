@@ -214,6 +214,18 @@
 					</ul>
 				</div>
 			</section>
+
+			<script>
+				var curHeight = window.innerHeight;
+
+				window.addEventListener('resize', function(event){
+					if (window.innerWidth < mobileWidth && window.innerHeight < curHeight)
+					{
+						$(".contacts__container").css("transform", "translateY(-40%)");
+						// console.log('yes');
+					}
+				});
+			</script>
 		</section>
 	</main>
 </body>
