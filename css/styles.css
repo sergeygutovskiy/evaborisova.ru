@@ -683,6 +683,7 @@ nav.nav-mobile .nav__phone {
 }
 
 .contacts__form {
+	position: relative;
 	z-index: 1;
 }
 
@@ -756,11 +757,13 @@ nav.nav-mobile .nav__phone {
 
 	.contacts__container {
 		flex-direction: column-reverse;
+		
 	}
 
 	.contacts__list {
 		margin-left: 0;
 		margin-bottom: 64px;
+		padding-top: 0;
 	}
 }
 
@@ -768,6 +771,13 @@ nav.nav-mobile .nav__phone {
 {
 	.contacts {
 		padding: 0 16px;
+	}
+
+	.contacts__container {
+		justify-content: space-around;
+		
+		height: 100%;
+		padding-top: 54px;
 	}
 
 	.contacts__list li {
