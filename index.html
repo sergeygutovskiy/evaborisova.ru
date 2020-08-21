@@ -15,10 +15,14 @@
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 	<!-- animate -->
-	<script scr="js/anime-master/lib/animate.min.js"></script>
+	<script src="js/anime-master/lib/anime.min.js"></script>
 
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		const mobileWidth = 768;
+	</script>
 
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 	<script src="/js/backgrounds.js"></script>
@@ -34,7 +38,7 @@
 		<div class="body-background"></div>
 		<div class="body-blur"></div>
 
-		<nav class="nav-mobile">
+		<nav>
 			<div class="nav__logo">
 				Eva Borisova
 			</div>
@@ -46,7 +50,9 @@
 				<li class="nav__link"><a href="#">О нас</a></li>
 				<li class="nav__link"><a href="#">Контакты</a></li>
 			</ul>
-			
+		
+			<div class="nav__page-title"></div>
+
 			<div class="nav__phone">
 				<a href="tel:+79673307462">+7 (967) 330 74 62</a>
 			</div>
@@ -71,13 +77,13 @@
 				{
 					navigationButton.classList.remove("is-active");
 					navigationList.classList.remove("nav__links--active");
-					showPagination();
+					// showPagination();
 				}
 				else
 				{
 					navigationButton.classList.add("is-active");
 					navigationList.classList.add("nav__links--active")
-					hidePagination();
+					// hidePagination();
 				}
 
 				isNavigationActive = !isNavigationActive;
@@ -97,7 +103,6 @@
 
 		<script>
 			var pagination = $(".pagination");
-			const mobileWidth = 768;
 
 			function paginationNext()
 			{
@@ -208,24 +213,26 @@
 
 					<div class="about__stats">
 						<div class="about__stat">
-							<div>200</div>
+							<div class="counter">200</div>
 							<span class="golden-rain">завершенных проектов</span>
 						</div>
 						<div class="about__stat">
-							<div>100</div>
+							<div class="counter">100</div>
 							<span class="golden-rain">сотрудников</span>
 						</div>
 						<div class="about__stat">
-							<div>300</div>
+							<div class="counter">300</div>
 							<span class="golden-rain">незавершенных проектов</span>
 						</div>
 						<div class="about__stat">
-							<div>16</div>
+							<div class="counter">16</div>
 							<span class="golden-rain">компаний-партнеров</span>
 						</div>
 					</div>
 				</div>
 			</section>
+
+			<script src="/js/numbers.js"></script>
 
 			<section class="backgrounds__item backgrounds__item-contacts contacts">
 				<div class="backgrounds__back-color"></div>
