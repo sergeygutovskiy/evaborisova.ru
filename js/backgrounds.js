@@ -5,6 +5,7 @@ var stY;
 var pageTitles = [
 	"",
 	"Галерея",
+	"Проекты",
 	"О нас",
 	"Контакты"
 ];
@@ -12,6 +13,7 @@ var pageTitles = [
 var pageURIs = [
 	"",
 	"#gallery",
+	"#projects",
 	"#about-us",
 	"#contacts"
 ];
