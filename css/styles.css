@@ -1,4 +1,4 @@
-* {
+*, *::before, *::after {
 	box-sizing: border-box; 
 }
 
@@ -79,6 +79,31 @@ body {
 	font-weight: 300;
 }
 
+a {
+	color: #F6F6F6;
+	text-decoration: none;
+
+	transition: color 150ms linear;
+}
+
+a:hover {
+	color: #FFCC66;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+*, *:focus {
+	outline: none;
+}
+
+/*
+ *
+ * background image for geader, gallery pages
+ *
+ */
+
 .body-background {
 	position: absolute;
 	width: 100%;
@@ -91,6 +116,12 @@ body {
 	transition: 800ms ease;
 }
 
+/*
+ *
+ * blur for body? idk
+ *
+ */
+
 .body-blur {
 	position: absolute;
 	width: 100%;
@@ -101,6 +132,12 @@ body {
 	opacity: 0;
 	transition: 800ms ease;
 }
+
+/*
+ *
+ * pagination for swiper
+ *
+ */
 
 .main-pagination span {
 	width: 8px;
@@ -122,24 +159,60 @@ body {
 	margin-right: 0;
 }
 
-a {
-	color: #F6F6F6;
-	text-decoration: none;
+.main-pagination__button {
+	z-index: 10;
 
-	transition: color 150ms linear;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	
+	height: 57px;
+	width: 24px;
+	
+	border: none;
+	background-image: url(../imgs/swiper-arrow.png);
+	background-size: cover;
+	background-color: transparent;
+
+	opacity: 0.7;
 }
 
-a:hover {
+.main-pagination__button:hover {
+	cursor: pointer;
+	opacity: 1;
 	color: #FFCC66;
 }
 
-h2 {
-	font-size: 36px;
+.main-pagination__button-prev {
+	left: 0;
 }
+
+.main-pagination__button-next {
+	right: 0;
+	transform: translateY(-50%) rotate(180deg);
+}
+
+/*
+ *
+ *  yellow text
+ *
+ */
 
 .golden-rain {
 	color: #FFCC66;
 	font-weight: 400;
+}
+
+@media screen and (max-width: 768px)
+{
+	.main-pagination span {
+		margin-right: 16px;
+	}
+
+	.main-pagination__button {
+		height: 32px;
+		width: 12px;
+	}
 }
 
 *, *:focus {
@@ -539,6 +612,21 @@ nav {
 	transition: ease 800ms;
 }
 
+.backgrounds__item-container {
+	position: relative;
+
+	margin-top: 72px;
+	margin-bottom: 36px;
+
+	margin-left: 83px;
+	margin-right: 83px;
+
+	width: 100%;
+	max-height: 100%;
+
+	overflow: auto;
+}
+
 .backgrounds__item {
 	position: relative;
 
@@ -641,128 +729,65 @@ nav {
  */
 
 .gallery {
-	padding: 0 83px;
 	display: flex;
-	justify-content: space-between;
 }
 
-.gallery__images {
-	position: relative;
-	
+.gallery .backgrounds__item-container {
 	display: flex;
 	justify-content: center;
-	flex-direction: column;
-}
-
-.gallery__images img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-/* .gallery__title {
-	position: absolute;
-	left: -40px;
-	
-	z-index: 2;
-}
-
-.gallery__title h2 {
-	margin-top: 0;
-	margin-bottom: 12px;
-
-	color: white;
-	line-height: 122%;
-	font-weight: 700;
-}
-
-.gallery__title a {
-	font-weight: 700;
-} */
-
-.gallery__button {
-	position: relative;
-	right: unset;
-	left: unset;
-
-	/* margin-top: 32px; */
-}
-
-.gallery__button::after {
-	font-size: 57px;
-	color: white;
+	align-items: center;
 }
 
 .gallery-swiper-container {
-	margin-top: 32px;
+	margin: 0;
+	
+	width: 100%;
+	max-width: calc(100% - 24px * 2 - 64px * 2);
+	max-height: calc(100% - 120px);
 
-	/* screen width - screen paddings - button width - swiper margins  */
-	width: calc(100vw - 83px * 2 - 32px * 2 - 80px * 2);	
-
-	box-shadow: 4px 4px 15px 2px rgba(33, 24, 5, 0.4), 
-		-4px -4px 15px 2px rgba(33, 24, 5, 0.4);
+	box-shadow: 4px 4px 15px 2px rgba(33, 24, 5, 0.4), -4px -4px 15px 2px rgba(33, 24, 5, 0.4);
 }
 
 .gallery-swiper-container::before {
 	content: '';
 	display: block;
-	padding-bottom: 40%;
+	padding-bottom: 50%;
 }
 
-.gallery__pagination {
-	position: relative;
-	top: 40px;
-}
-
-.gallery .swiper-wrapper {
+.gallery-swiper-container .swiper-wrapper {
 	position: absolute;
 	top: 0;
 }
 
+.gallery img {
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+}
+
+.gallery__pagination {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 16px; 	
+}
+
 @media screen and (max-width: 768px)
 {
-	.gallery {
-		padding: 0 16px;
+
+	.gallery .backgrounds__item-container {
+		margin-left: 16px;
+		margin-right: 16px;
+		margin-top: 54px;
 	}
 
 	.gallery-swiper-container {
-		width: calc(100vw - 16px * 2 - 32px * 2 - 16px * 2);
+		max-width: calc(100% - 12px * 2 - 24px * 2);
 	}
-
+	
 	.gallery-swiper-container::before {
 		padding-bottom: 150%;
-	}
-
-	.gallery__button::after {
-		font-size: 32px;
-	}
-
-	/* .gallery__title {
-		position: relative;
-		left: 0;
-		
-		height: 52px;
-		display: flex;
-		align-items: flex-end;
-
-		margin-bottom: 24px;
-	}
-
-	.gallery__title h2 {
-		font-size: 22px;
-		margin-bottom: 0;
-	}
-
-	.gallery__title a {
-		display: none;
-	} */
-
-	.gallery__pagination {
-		top: 24px;
-	}
-
-	.gallery__button {
-		margin-top: 0;
 	}
 }
 
@@ -914,7 +939,6 @@ nav {
 
 .projects {
 	display: flex;
-	align-items: center;
 }
 
 .projects-swiper-container {
@@ -967,25 +991,21 @@ nav {
 	color: white;
 }
 
-.projects__button::after {
-	font-size: 57px;
-	color: white;
+.projects .main-pagination__button-prev {
+	margin-left: 83px;
 }
 
-.projects__button-next {
-	right: 83px;
-}
-
-.projects__button-prev {
-	left: 83px;
+.projects .main-pagination__button-next {
+	margin-right: 83px;
 }
 
 .projects__pagination {
     position: absolute;
-    bottom: 20%;
-   
     left: 50%;
     transform: translateX(-50%);
+    bottom: 16px;
+
+    margin-bottom: 32px;
 }
 
 @media screen and (max-width: 768px)
@@ -995,20 +1015,21 @@ nav {
 		font-size: 24px;	
 	}
 
-	.projects__button::after {
-		font-size: 32px;
-	}
-
-	.projects__button-next {
-		right: 16px;
-	}
-
-	.projects__button-prev {
-		left: 16px;
+	.projects__text {
+		padding-left: 16px;
+		padding-right: 16px;
 	}
 
 	.projects__pagination {
 		display: none;
+	}
+
+	.projects .main-pagination__button-prev {
+		margin-left: 16px;
+	}
+
+	.projects .main-pagination__button-next {
+		margin-right: 16px;
 	}
 }
 

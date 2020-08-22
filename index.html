@@ -102,38 +102,36 @@
 			<section class="backgrounds__item backgrounds__item-gallery gallery">
 				<div class="backgrounds__back-color"></div>
 				
-				<div class="gallery__container">
+				<div class="backgrounds__item-container">
 					<!-- left/right buttons -->
-					<div class="gallery__button swiper-button-prev gallery__button-prev"></div>
-					<div class="gallery__button swiper-button-next gallery__button-next"></div>
+					<button class="gallery__button main-pagination__button main-pagination__button-prev"></button>
+					<button class="gallery__button main-pagination__button main-pagination__button-next"></button>
 					
-					<div class="gallery__images">	
-						<div class="swiper-container gallery-swiper-container">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<img src="imgs/contacts.jpg">
-								</div>
-								<div class="swiper-slide">
-									<img src="imgs/contacts.jpg">
-								</div>
-								<div class="swiper-slide">
-									<img src="imgs/contacts.jpg">
-								</div>
-								<div class="swiper-slide">
-									<img src="imgs/contacts.jpg">
-								</div>	
-								<div class="swiper-slide">
-									<img src="imgs/contacts.jpg">
-								</div>
-								<div class="swiper-slide">
-									<img src="imgs/contacts.jpg">
-								</div>	
+					<div class="swiper-container gallery-swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="imgs/contacts.jpg">
 							</div>
+							<div class="swiper-slide">
+								<img src="imgs/contacts.jpg">
+							</div>
+							<div class="swiper-slide">
+								<img src="imgs/contacts.jpg">
+							</div>
+							<div class="swiper-slide">
+								<img src="imgs/contacts.jpg">
+							</div>	
+							<div class="swiper-slide">
+								<img src="imgs/contacts.jpg">
+							</div>
+							<div class="swiper-slide">
+								<img src="imgs/contacts.jpg">
+							</div>	
 						</div>
-						
-						<!-- pagination -->
-						<div class="swiper-pagination main-pagination gallery__pagination"></div>
 					</div>
+					
+					<!-- pagination -->
+					<div class="swiper-pagination main-pagination gallery__pagination"></div>
 				</div>	
 			</section>
 
@@ -170,9 +168,8 @@
 
 			<!-- 3: projects -->
 			<section class="backgrounds__item backgrounds__item-projects projects">
-				
-				<div class="projects__button swiper-button-prev projects__button-prev"></div>
-				<div class="projects__button swiper-button-next projects__button-next"></div>
+				<button class="projects__button main-pagination__button main-pagination__button-prev"></button>
+				<button class="projects__button main-pagination__button main-pagination__button-next"></button>
 				
 				<div class="swiper-container projects-swiper-container">
 					<div class="swiper-wrapper">
@@ -213,8 +210,9 @@
 							</div>
 						</div>	
 					</div>
-				</div>
 				
+				</div>
+			
 				<!-- pagination -->
 				<div class="swiper-pagination main-pagination projects__pagination"></div>
 			</section>
@@ -345,8 +343,8 @@
 
 		var swiper = new Swiper('.gallery-swiper-container', {
 			navigation: {
-				nextEl: ".gallery__button-next",
-				prevEl: ".gallery__button-prev",
+				nextEl: ".gallery .main-pagination__button-next",
+				prevEl: ".gallery .main-pagination__button-prev",
 			},
 
 			pagination: {
@@ -358,8 +356,8 @@
 		
 		var swiper2 = new Swiper('.projects-swiper-container', {
 			navigation: {
-				nextEl: ".projects__button-next",
-				prevEl: ".projects__button-prev",
+				nextEl: ".projects .main-pagination__button-next",
+				prevEl: ".projects .main-pagination__button-prev",
 			},
 
 			speed: 500,
