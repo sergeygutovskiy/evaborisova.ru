@@ -45,11 +45,11 @@
 			</div>
 
 			<ul class="nav__links">
-				<li class="nav__link"><a href="#">Галерея</a></li>
-				<li class="nav__link"><a href="#">Услуги</a></li>
-				<li class="nav__link"><a href="#">Проекты</a></li>
-				<li class="nav__link"><a href="#">О нас</a></li>
-				<li class="nav__link"><a href="#">Контакты</a></li>
+				<li class="nav__link"><a href="#gallery"  onclick="changePage(this)">Галерея</a></li>
+				<li class="nav__link"><a href="#services" onclick="changePage(this)">Услуги</a></li>
+				<li class="nav__link"><a href="#projects" onclick="changePage(this)">Проекты</a></li>
+				<li class="nav__link"><a href="#about-us" onclick="changePage(this)">О нас</a></li>
+				<li class="nav__link"><a href="#contacts" onclick="changePage(this)">Контакты</a></li>
 			</ul>
 		
 			<div class="nav__page-title"></div>
@@ -486,6 +486,26 @@
 
 			}
 		});
+
+		//
+
+		function changePage(el)
+		{
+			let index = pageURIs.indexOf( $(el).attr("href"));
+			
+			if (curBot == 0)
+				$("body").removeClass("viewing-header");
+
+			curBot += 100 * index - curBot;
+
+			whenScroll();
+				
+			scrollable = false;
+			$(".backgrounds").css("transform", "translateY(" + -curBot + "%)");
+			setTimeout(function() {
+				scrollable = true
+			}, 1000);
+		}
 
 	</script>
 	
