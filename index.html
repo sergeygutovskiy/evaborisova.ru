@@ -343,12 +343,14 @@
 
 		// gallery slider
 
-		var swiper = new Swiper('.gallery-swiper-container', {
+		var galleryWwiper = new Swiper('.gallery-swiper-container', {
 			navigation: {
 				nextEl: ".gallery .main-pagination__button-next",
 				prevEl: ".gallery .main-pagination__button-prev",
 			},
 
+			resistanceRatio: 0,
+			
 			pagination: {
 				el: ".gallery__pagination"
 			}
@@ -356,7 +358,7 @@
 
 		// projects slider
 		
-		var swiper2 = new Swiper('.projects-swiper-container', {
+		var projectsSwiper = new Swiper('.projects-swiper-container', {
 			navigation: {
 				nextEl: ".projects .main-pagination__button-next",
 				prevEl: ".projects .main-pagination__button-prev",
@@ -364,8 +366,16 @@
 
 			speed: 500,
 			simulateTouch: false,
-			allowTouchMove: false,
-			resistance: false,
+			resistanceRatio: 0,
+
+			breakpoints: {
+				0: {
+					allowTouchMove: true,		
+				},
+				768: {
+					allowTouchMove: false
+				} 
+			},
 
 			pagination: {
 				el: ".projects__pagination"
