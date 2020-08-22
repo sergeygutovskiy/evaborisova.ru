@@ -7,8 +7,6 @@ counters.each(function () {
 	var that = $(this), num = that.html();
 	that.html(0);
 	
-	console.log(1);
-
 	that.attr('data-num',num);
 });
 

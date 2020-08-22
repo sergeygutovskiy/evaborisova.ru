@@ -25,19 +25,20 @@
 	</script>
 
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+
 	<script src="/js/backgrounds.js"></script>
+
 </head>
 
 <body>
 	<main>
-		<script>
-			let vh = window.innerHeight * 0.01;
-			document.documentElement.style.setProperty('--vh', `${vh}px`);
-		</script>
-
+		<!-- background for header and gallery pages  -->
 		<div class="body-background"></div>
+
+		<!-- blur for background image -->
 		<div class="body-blur"></div>
 
+		<!-- navigation -->
 		<nav>
 			<div class="nav__logo">
 				Eva Borisova
@@ -66,32 +67,13 @@
 			</div>
 
 		</nav>
-		
-		<script>
-			var isNavigationActive = false;
-			var navigationList     = document.getElementsByClassName("nav__links")[0];
-			var navigationButton   = document.getElementsByClassName("nav__hamburger")[0];
 
-			var toogleNavigation = function () {
-				if (isNavigationActive) 
-				{
-					navigationButton.classList.remove("is-active");
-					navigationList.classList.remove("nav__links--active");
-					// showPagination();
-				}
-				else
-				{
-					navigationButton.classList.add("is-active");
-					navigationList.classList.add("nav__links--active")
-					// hidePagination();
-				}
+		<!-- bottom phone number for all pages expept header -->
+		<div class="bottom-phone">
+			<a class="golden-rain" href="tel:+79673307462">+7 (967) 330 74 62</a>
+		</div>
 
-				isNavigationActive = !isNavigationActive;
-			}
-
-			navigationButton.onclick = toogleNavigation;
-		</script>
-
+		<!-- pages side pagination -->
 		<div class="pagination">
 			<div class="pagination__item pagination__item--active"></div>
 			<div class="pagination__item"></div>
@@ -101,40 +83,9 @@
 			<div class="pagination__item"></div>
 		</div>
 
-		<script>
-			var pagination = $(".pagination");
-
-			function paginationNext()
-			{
-				$(".pagination__item--active")
-					.removeClass("pagination__item--active")
-					.next()
-					.addClass("pagination__item--active");
-			}
-		
-			function paginationPrev()
-			{
-				$(".pagination__item--active")
-					.removeClass("pagination__item--active")
-					.prev()
-					.addClass("pagination__item--active");
-			}
-
-			function showPagination()
-			{
-				if (window.innerWidth >= mobileWidth)
-				{
-					pagination.show();
-				}
-			}
-
-			function hidePagination()
-			{
-				pagination.hide();
-			}
-		</script>
-
+		<!--  container with pages-slides -->
 		<section class="backgrounds">
+			<!-- 1: header -->
 			<section class="backgrounds__item backgrounds__item-header header">
 				<div class="backgrounds__back-color"></div>
 			
@@ -147,57 +98,46 @@
 				</div>
 			</section>
 
+			<!-- 1: gallery  -->
 			<section class="backgrounds__item backgrounds__item-gallery gallery">
 				<div class="backgrounds__back-color"></div>
-				<div class="gallery__button swiper-button-prev"></div>
-				<div class="gallery__images">	
-					<!-- titles -->
-					<div class="gallery__title">
-						<h2>Ремонт <br> ремонтный</h2>
-						<a href="#" class="golden-rain">Перейти на страницу проекта</a>
-					</div>
-
-					<div class="swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
+				
+				<div class="gallery__container">
+					<!-- left/right buttons -->
+					<div class="gallery__button swiper-button-prev gallery__button-prev"></div>
+					<div class="gallery__button swiper-button-next gallery__button-next"></div>
+					
+					<div class="gallery__images">	
+						<div class="swiper-container gallery-swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="imgs/contacts.jpg">
+								</div>
+								<div class="swiper-slide">
+									<img src="imgs/contacts.jpg">
+								</div>
+								<div class="swiper-slide">
+									<img src="imgs/contacts.jpg">
+								</div>
+								<div class="swiper-slide">
+									<img src="imgs/contacts.jpg">
+								</div>	
+								<div class="swiper-slide">
+									<img src="imgs/contacts.jpg">
+								</div>
+								<div class="swiper-slide">
+									<img src="imgs/contacts.jpg">
+								</div>	
 							</div>
-							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
-							</div>
-							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
-							</div>
-							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
-							</div>	
-							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
-							</div>
-							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
-							</div>	
 						</div>
+						
+						<!-- pagination -->
+						<div class="swiper-pagination main-pagination gallery__pagination"></div>
 					</div>
-					<!-- pagination -->
-					<div class="swiper-pagination"></div>
-				</div>
-				<div class="gallery__button swiper-button-next"></div>
+				</div>	
 			</section>
 
-			<script>
-				var swiper = new Swiper('.swiper-container', {
-					navigation: {
-						nextEl: ".swiper-button-next",
-						prevEl: ".swiper-button-prev",
-					},
-
-					pagination: {
-						el: ".swiper-pagination"
-					}
-				});
-			</script>
-			
+			<!-- 2: services -->
 			<section class="backgrounds__item backgrounds__item-services services" style="display: none">
 				<div class="backgrounds__back-color"></div>
 			
@@ -228,130 +168,81 @@
 				</div>
 			</section>
 
+			<!-- 3: projects -->
 			<section class="backgrounds__item backgrounds__item-projects projects">
-				<div class="backgrounds__back-color"></div>
-			
-				<ul class="projects__list">
-					<li><a href="" data-key="0">Project</a></li>
-					<li><a href="" data-key="1">Project</a></li>
-					<li><a href="" data-key="2">Project</a></li>
-					<li><a href="" data-key="3">Project</a></li>
-					<li><a href="" data-key="4">Project</a></li>
-				</ul>
-
-				<div class="projects__info">
-					<div class="projects__title"></div>
-					<div class="projects__text"></div>
+				
+				<div class="projects__button swiper-button-prev projects__button-prev"></div>
+				<div class="projects__button swiper-button-next projects__button-next"></div>
+				
+				<div class="swiper-container projects-swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="backgrounds__back-color"></div>
+							
+							<div class="projects__title">Title</div>
+							<div class="projects__text">
+								Text text text text texte text etefafsasfs fs sfassf saf sa ss asa f 
+								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
+								sfsafasfas afsfsf sfsfssss sffsasf asfas sfas fasassf as afs.
+							</div>
+						</div>
+						
+						<div class="swiper-slide">
+							<div class="backgrounds__back-color"></div>
+							
+							<div class="projects__title">Title</div>
+							<div class="projects__text">
+								Text text text text texte text etefafsasfs fs sfassf saf sa ss asa f 
+								sfsafasfas afsfsf sfsfssss sffsasf asfas sfas fasassf as afs.
+								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
+								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
+								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
+								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
+								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
+							</div>
+						</div>
+						
+						<div class="swiper-slide">
+							<div class="backgrounds__back-color"></div>
+							
+							<div class="projects__title">Title</div>
+							<div class="projects__text">
+								Text text text text texte text etefafsasfs fs sfassf saf sa ss asa f 
+								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
+								sfsafasfas afsfsf sfsfssss sffsasf asfas sfas fasassf as afs.
+							</div>
+						</div>	
+					</div>
 				</div>
+				
+				<!-- pagination -->
+				<div class="swiper-pagination main-pagination projects__pagination"></div>
 			</section>
 
-			<script>
-				var projects = [
-					{
-						title: "1",
-						text: "1 text"
-					},
-					{
-						title: "2",
-						text: "2 text"
-					},
-					{
-						title: "3",
-						text: "3 text"
-					},
-					{
-						title: "4",
-						text: "4 text"
-					},
-					{
-						title: "5",
-						text: "5 text"
-					}
-				];
-				
-				$(".projects__title").text(projects[0].title);
-				$(".projects__text").text(projects[0].text);
-
-
-				var curProjectIndex = null;
-
-				$(".projects__list a").hover(function() {
-					if ($(this).attr("data-key") == curProjectIndex)
-						return;
-
-					anime({
-						targets: '.projects__title',
-						translateY: 40,
-						opacity: 0,
-						easing: 'easeInOutExpo',
-						duration: 200
-					});
-
-					anime({
-						targets: '.projects__text',
-						translateY: 40,
-						opacity: 0,
-						easing: 'easeInOutExpo',
-						duration: 200
-					});
-
-					curProjectIndex = $(this).attr("data-key");
-
-					setTimeout(showProjectInfo, 400);
-
-				});
-
-				function showProjectInfo()
-				{
-					let prTitle = projects[curProjectIndex].title;
-					let prText  = projects[curProjectIndex].text;
-
-					$(".projects__title").text(prTitle);
-					$(".projects__text").text(prText);
-
-					anime({
-						targets: '.projects__title',
-						translateY: 0,
-						opacity: 1,
-						easing: 'easeInOutExpo',
-						duration: 200
-					});
-			
-					anime({
-						targets: '.projects__text',
-						translateY: 0,
-						opacity: 1,
-						easing: 'easeInOutExpo',
-						duration: 200
-					});
-				}
-			</script>
-
+			<!-- 4: about -->
 			<section class="backgrounds__item backgrounds__item-about about">
 				<div class="backgrounds__back-color"></div>
 
 				<div class="about__container">
 					<div class="about__text">
-						Товарищи! дальнейшее развитие различных форм деятельности влечет за собой 
-						процесс внедрения и модернизации новых предложений. Повседневная практика показывает,
-						что консультация с широким активом представляет собой интересный эксперимент 
-						проверки направлений прогрессивного развития. 
-						С другой стороны новая модель организационной деятельности требуют от нас 
-						анализа соответствующий условий активизации.
+						В 1990 г. под названием «Eva Borisova» объединились специалисты — 
+						реставраторы, модельщики, архитекторы, лепщики, имеющие большой опыт 
+						в реставрации, создании или воссоздании интерьеров, казалось бы, 
+						давно ушедших от сегодняшнего времени стилей и направлений.
 					</div>
 
 					<div class="about__stats">
 						<div class="about__stat">
-							<div class="counter">200</div>
-							<span class="golden-rain">завершенных проектов</span>
+							<div class="counter">30</div>
+							<span class="golden-rain">лет опыта</span>
 						</div>
 						<div class="about__stat">
-							<div class="counter">100</div>
+							<div class="counter">20</div>
 							<span class="golden-rain">сотрудников</span>
 						</div>
 						<div class="about__stat">
 							<div class="counter">300</div>
-							<span class="golden-rain">незавершенных проектов</span>
+							<span class="golden-rain">завершенных проектов</span>
 						</div>
 						<div class="about__stat">
 							<div class="counter">16</div>
@@ -361,8 +252,7 @@
 				</div>
 			</section>
 
-			<script src="/js/numbers.js"></script>
-
+			<!-- 5: contacts -->
 			<section class="backgrounds__item backgrounds__item-contacts contacts">
 				<div class="backgrounds__back-color"></div>
 			
@@ -384,27 +274,212 @@
 					</ul>
 				</div>
 			</section>
-
-			<script>
-				var curHeight = window.innerHeight;
-
-				window.addEventListener('resize', function(event){
-					if (window.innerWidth < mobileWidth && window.innerHeight < curHeight)
-					{
-						$(".contacts__container")
-							.css("transform", "translateY(-" + (curHeight - window.innerHeight)  + "px)");
-						curHeight = window.innerHeight;	
-					}
-					else if (window.innerWidth < mobileWidth && window.innerHeight > curHeight)
-					{
-						$(".contacts__container")
-							.css("transform", "translateY(0)");
-						curHeight = window.innerHeight;	
-
-					}
-				});
-			</script>
 		</section>
 	</main>
+
+	<!-- all js logic -->
+	<script>
+	
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	
+		// navigation button
+
+		var isNavigationActive = false;
+		var navigationList     = document.getElementsByClassName("nav__links")[0];
+		var navigationButton   = document.getElementsByClassName("nav__hamburger")[0];
+
+		var toogleNavigation = function() {
+			if (isNavigationActive) 
+			{
+				navigationButton.classList.remove("is-active");
+				navigationList.classList.remove("nav__links--active");
+				// showPagination();
+			}
+			else
+			{
+				navigationButton.classList.add("is-active");
+				navigationList.classList.add("nav__links--active")
+				// hidePagination();
+			}
+
+			isNavigationActive = !isNavigationActive;
+		}
+
+		navigationButton.onclick = toogleNavigation;
+
+		// pagination
+
+		var pagination = $(".pagination");
+
+		function paginationNext()
+		{
+			$(".pagination__item--active")
+				.removeClass("pagination__item--active")
+				.next()
+				.addClass("pagination__item--active");
+		}
+	
+		function paginationPrev()
+		{
+			$(".pagination__item--active")
+				.removeClass("pagination__item--active")
+				.prev()
+				.addClass("pagination__item--active");
+		}
+
+		function showPagination()
+		{
+			if (window.innerWidth >= mobileWidth)
+			{
+				pagination.show();
+			}
+		}
+
+		function hidePagination()
+		{
+			pagination.hide();
+		}
+
+		// gallery slider
+
+		var swiper = new Swiper('.gallery-swiper-container', {
+			navigation: {
+				nextEl: ".gallery__button-next",
+				prevEl: ".gallery__button-prev",
+			},
+
+			pagination: {
+				el: ".gallery__pagination"
+			}
+		});
+
+		// projects slider
+		
+		var swiper2 = new Swiper('.projects-swiper-container', {
+			navigation: {
+				nextEl: ".projects__button-next",
+				prevEl: ".projects__button-prev",
+			},
+
+			speed: 500,
+			simulateTouch: false,
+			allowTouchMove: false,
+			resistance: false,
+
+			pagination: {
+				el: ".projects__pagination"
+			}
+		});
+
+		//		
+
+		var projects = [
+			{
+				title: "1",
+				text: "1 text"
+			},
+			{
+				title: "2",
+				text: "2 text"
+			},
+			{
+				title: "3",
+				text: "3 text"
+			},
+			{
+				title: "4",
+				text: "4 text"
+			},
+			{
+				title: "5",
+				text: "5 text"
+			}
+		];
+		
+		/*
+		
+		$(".projects__title").text(projects[0].title);
+		$(".projects__text").text(projects[0].text);
+
+		var curProjectIndex = null;
+
+		$(".projects__list a").hover(function() {
+			if ($(this).attr("data-key") == curProjectIndex)
+				return;
+
+			anime({
+				targets: '.projects__title',
+				translateY: 40,
+				opacity: 0,
+				easing: 'easeInOutExpo',
+				duration: 200
+			});
+
+			anime({
+				targets: '.projects__text',
+				translateY: 40,
+				opacity: 0,
+				easing: 'easeInOutExpo',
+				duration: 200
+			});
+
+			curProjectIndex = $(this).attr("data-key");
+
+			setTimeout(showProjectInfo, 400);
+
+		});
+
+		function showProjectInfo()
+		{
+			let prTitle = projects[curProjectIndex].title;
+			let prText  = projects[curProjectIndex].text;
+
+			$(".projects__title").text(prTitle);
+			$(".projects__text").text(prText);
+
+			anime({
+				targets: '.projects__title',
+				translateY: 0,
+				opacity: 1,
+				easing: 'easeInOutExpo',
+				duration: 200
+			});
+	
+			anime({
+				targets: '.projects__text',
+				translateY: 0,
+				opacity: 1,
+				easing: 'easeInOutExpo',
+				duration: 200
+			});
+		}
+
+		*/
+
+		// for f*cking movement of mobile keyboard support
+	
+		var curHeight = window.innerHeight;
+
+		window.addEventListener('resize', function(event){
+			if (window.innerWidth < mobileWidth && window.innerHeight < curHeight)
+			{
+				$(".contacts__container")
+					.css("transform", "translateY(-" + (curHeight - window.innerHeight)  + "px)");
+				curHeight = window.innerHeight;	
+			}
+			else if (window.innerWidth < mobileWidth && window.innerHeight > curHeight)
+			{
+				$(".contacts__container")
+					.css("transform", "translateY(0)");
+				curHeight = window.innerHeight;	
+
+			}
+		});
+
+	</script>
+	
+	<script src="/js/numbers.js"></script>
+
 </body>
 </html>

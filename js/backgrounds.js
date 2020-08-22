@@ -21,6 +21,7 @@ var pageURIs = [
 var pageStatuses = [
 	"viewing-header",
 	"viewing-gallery",
+	"viewing-projects",
 	"viewing-about",
 	"viewing-contacts"
 ];
