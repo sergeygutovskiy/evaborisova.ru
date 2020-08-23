@@ -284,7 +284,7 @@ nav {
 }
 
 .nav__links {
-	display: none;
+	display: flex;
 
 	position: absolute;
 	left: 0;
@@ -298,11 +298,15 @@ nav {
 
 	width: 100%;
 	height: 100vh;
+	height: 0;
 
 	justify-content: center;
 	align-items: stretch;
 
 	list-style: none;
+	overflow: hidden;
+
+	transition: height 500ms ease;
 }
 
 .viewing-header .nav__links {
@@ -318,7 +322,7 @@ nav {
 }
 
 .nav__links--active {
-	display: flex;
+	height: 100vh;
 }
 
 .nav__link {
@@ -336,9 +340,10 @@ nav {
 .nav__link a {
 	display: flex;	
 	align-items: center;
-	
+	justify-content: center;
+
 	height: 100%;
-	padding: 0 38px;
+	width: 160px;	
 }
 
 .viewing-header .nav__link {
@@ -348,6 +353,8 @@ nav {
 .viewing-header .nav__link a {
 	position: relative;
 	height: auto;
+	
+	width: auto;
 
 	padding: 0;
 }
@@ -507,6 +514,7 @@ nav {
 
 	.nav__link > a {
 		justify-content: center;
+		width: 100%;
 	}
 
 	.nav__link:last-child {

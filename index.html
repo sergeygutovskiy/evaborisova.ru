@@ -289,21 +289,28 @@
 		var navigationList     = document.getElementsByClassName("nav__links")[0];
 		var navigationButton   = document.getElementsByClassName("nav__hamburger")[0];
 
-		var toogleNavigation = function() {
-			if (isNavigationActive) 
-			{
-				navigationButton.classList.remove("is-active");
-				navigationList.classList.remove("nav__links--active");
-				// showPagination();
-			}
-			else
-			{
-				navigationButton.classList.add("is-active");
-				navigationList.classList.add("nav__links--active")
-				// hidePagination();
-			}
+		function showNavigation()
+		{
+			navigationButton.classList.add("is-active");
+			navigationList.classList.add("nav__links--active")
+			
+			isNavigationActive = true;
+		}
 
-			isNavigationActive = !isNavigationActive;
+		function hideNavigation()
+		{
+			navigationButton.classList.remove("is-active");
+			navigationList.classList.remove("nav__links--active");
+		
+			isNavigationActive = false;
+		}
+
+		var toogleNavigation = function() 
+		{
+			if (isNavigationActive) 
+				hideNavigation();
+			else
+				showNavigation();
 		}
 
 		navigationButton.onclick = toogleNavigation;
@@ -499,12 +506,25 @@
 			curBot += 100 * index - curBot;
 
 			whenScroll();
-				
-			scrollable = false;
-			$(".backgrounds").css("transform", "translateY(" + -curBot + "%)");
-			setTimeout(function() {
-				scrollable = true
-			}, 1000);
+			
+			if (isNavigationActive)
+			{
+				hideNavigation();
+				setTimeout(() => {
+					scrollable = false;
+					$(".backgrounds").css("transform", "translateY(" + -curBot + "%)");
+					setTimeout(function() {
+						scrollable = true
+					}, 1000);
+				}, 500);
+			}
+			else {
+				scrollable = false;
+				$(".backgrounds").css("transform", "translateY(" + -curBot + "%)");
+				setTimeout(function() {
+					scrollable = true
+				}, 1000);
+			}
 		}
 
 	</script>
