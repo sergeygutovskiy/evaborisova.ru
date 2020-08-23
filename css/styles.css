@@ -663,8 +663,7 @@ nav {
 }
 
 .backgrounds__item-contacts { background-color: #272727; }
-.backgrounds__item-about { background-image: url("/imgs/contacts.jpg"); }
-.backgrounds__item-projects { background-image: url("/imgs/contacts.jpg"); }
+.backgrounds__item-about { background-image: url("/imgs/about.jpg"); }
 
 /*
  *
@@ -814,6 +813,154 @@ nav {
 	}
 }
 
+@media screen and (max-height: 568px)
+{
+	.gallery__button {
+		display: none;
+	}
+
+	.gallery__pagination {
+		display: none;
+	}
+
+	.gallery .backgrounds__item-container {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.gallery-swiper-container {
+		max-width: 100%;
+		width: 100%;
+
+		padding-left: 16px;
+
+		box-shadow: none;
+	}
+
+	.gallery .swiper-slide {
+		width: calc(100% - 16px * 4);
+	}	
+}
+
+
+/*
+ *
+ *
+ * Services 3rd slide
+ *
+ *
+ */
+
+.services {
+	display: flex;
+}
+
+.services .backgrounds__item-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.services__list {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-gap: 20px 100px;
+
+	transition: transform 300ms ease;
+}
+
+.services__list-info {
+	display: none;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	transform: translateX(100%);
+	transition: transform 300ms ease;
+}
+
+.services-swiper-container {
+	position: absolute;
+	bottom: 0;
+
+	width: 100%;
+}
+
+.services__title {
+	text-align: center;
+
+	font-size: 44px;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	color: #F6F6F6;
+}
+
+.services__text {
+	margin: auto;
+
+	max-width: 600px;
+	padding-top: 20px;
+
+	text-align: center;
+
+	font-family: Naruto, sans-serif;
+	font-weight: 400;
+	line-height: 24px;
+	color: white;
+}
+
+@media screen and (max-width: 768px)
+{
+	.services-swiper-container {
+		display: none;
+	}
+
+	.services .backgrounds__item-container {
+		justify-content: flex-start;
+		overflow: hidden;
+	}	
+
+	.services__list {
+		grid-template-columns: 1fr;
+	}
+	
+	.services__list-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		
+	}
+	
+	.services__list-info .services__text {
+		margin: 0;
+	}
+
+	.services__back-button {
+		position: absolute;
+		bottom: 32px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		
+		border: 0;
+		background-color: transparent;
+		
+		color: white;
+		font-size: 60px;
+	}
+
+	.services__title {
+		max-width: calc(100% - 16px * 2);
+		
+		font-weight: 400;
+		font-size: 24px;	
+	}
+}
 /*
  *
  *
@@ -851,6 +998,8 @@ nav {
 
 	border: none;
 	border-bottom: solid 2px white;
+	border-radius: 0;
+	
 	background-color: transparent;
 
 	padding: 12px 6px;
@@ -969,6 +1118,10 @@ nav {
 	display: flex;
 }
 
+.projects .backgrounds__back-color {
+	z-index: 1;
+}
+
 .projects-swiper-container {
 	width: 100%;
 	height: 100%;
@@ -983,40 +1136,25 @@ nav {
 	background-size: cover;
 }
 
-.projects-swiper-container .swiper-slide:nth-child(1) {
-	background-image: url("../imgs/contacts.jpg");
-}
-
-.projects-swiper-container .swiper-slide:nth-child(2) {
-	background-image: url("../imgs/contacts.jpg");
-}
-
-.projects-swiper-container .swiper-slide:nth-child(3) {
-	background-image: url("../imgs/contacts.jpg");
+.projects__image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .projects__title {
 	z-index: 1;
 
+	text-align: center;
+
 	font-size: 44px;
 	font-weight: 500;
 	letter-spacing: 0.02em;
 	color: #F6F6F6;
-}
-
-.projects__text {
-	z-index: 1;
-	position: relative;
-	top: 24px;
-
-	max-width: 600px;
-	text-align: center;
-	height: 0;
-
-	font-family: Naruto, sans-serif;
-	font-weight: 400;
-	line-height: 24px;
-	color: white;
 }
 
 .projects .main-pagination__button-prev {
@@ -1039,13 +1177,10 @@ nav {
 @media screen and (max-width: 768px)
 {
 	.projects__title {
+		max-width: calc(100% - 12px * 2 - 16px * 2 - 8px * 2);
+		
 		font-weight: 400;
 		font-size: 24px;	
-	}
-
-	.projects__text {
-		padding-left: 16px;
-		padding-right: 16px;
 	}
 
 	.projects__pagination {
@@ -1144,5 +1279,12 @@ nav {
 
 	.about__stat div {
 		font-size: 48px;
+	}
+}
+
+@media screen and (max-height: 568px)
+{
+	.about__stats {
+		display: none;
 	}
 }

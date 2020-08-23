@@ -5,6 +5,7 @@ var stY;
 var pageTitles = [
 	"",
 	"Галерея",
+	"Услуги",
 	"Проекты",
 	"О нас",
 	"Контакты"
@@ -13,6 +14,7 @@ var pageTitles = [
 var pageURIs = [
 	"",
 	"#gallery",
+	"#services",
 	"#projects",
 	"#about-us",
 	"#contacts"
@@ -21,6 +23,7 @@ var pageURIs = [
 var pageStatuses = [
 	"viewing-header",
 	"viewing-gallery",
+	"viewing-services",
 	"viewing-projects",
 	"viewing-about",
 	"viewing-contacts"
@@ -91,6 +94,8 @@ $(function() {
 function navDown() {
 	curBot += 100;
 
+	console.log(1);
+
 	whenScroll();
 	
 	scrollable = false;
@@ -98,20 +103,6 @@ function navDown() {
 	setTimeout(function() {
 		scrollable = true
 	}, 1000);
-
-	// if (curBot == 100)
-	// {
-	//	hidePagination();
-	//	$(".body-blur").css("opacity", "1");
-	// }
-	// else if (curBot == 200)
-	// {
-	//	showPagination();
-	//	
-	//	setTimeout(() => {
-	//		startCounters();
-	//	}, 800);
-	// }
 }
 
 function navUp() {
@@ -124,18 +115,6 @@ function navUp() {
 	setTimeout(function() {
 		scrollable = true
 	}, 1000);
-
-	// if (curBot == 0)
-	// {
-	//	showPagination();
-	//	 $(".body-blur").css("opacity", "0");
-	// }
-	// else if (curBot == 100)
-	// {
-	//	$(".body-background").css("transform", "translateY(0)");
-	//	hidePagination();
-	//	// $(".body-background").css("filter", "blur(8px)");
-	// }
 }
 
 $(document).on("touchstart", function(event) {
@@ -145,14 +124,14 @@ $(document).on("touchstart", function(event) {
 $(document).on("touchmove", function(event) {
 	// event.preventDefault();
 	var curY = event.originalEvent.touches[0].screenY;
-	if (stY - curY > 50 && curBot <= 300 && scrollable)
+	if (stY - curY > 50 && curBot <= 400 && scrollable)
 		navDown();
 	else if (curY - stY > 50 && curBot > 0 && scrollable) 
 		navUp();
 });
 
 $(document).on("keydown", function(event) {
-	if (event.keyCode == 40 && curBot <= 300 && scrollable) 
+	if (event.keyCode == 40 && curBot <= 400 && scrollable) 
 		navDown();
 	else if (event.keyCode == 38 && curBot > 0 && scrollable)
 		navUp();
@@ -160,7 +139,7 @@ $(document).on("keydown", function(event) {
 
 $(document).on("mousewheel DOMMouseScroll", function(event) {
 	// event.preventDefault();
-	if ((event.originalEvent.wheelDelta < 0 || event.originalEvent.detail > 0) && curBot <= 300 && scrollable)
+	if ((event.originalEvent.wheelDelta < 0 || event.originalEvent.detail > 0) && curBot <= 400 && scrollable)
 		navDown();
 	else if ((event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) && curBot > 0 && scrollable)
 		navUp();    

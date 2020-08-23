@@ -20,6 +20,10 @@
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+	<!-- font awesome-->
+	<link rel="stylesheet" href="fonts/css/all.min.css">
+	
+
 	<script>
 		const mobileWidth = 768;
 	</script>
@@ -110,23 +114,20 @@
 					<div class="swiper-container gallery-swiper-container">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
+								<img src="imgs/gallery/1.jpg">
 							</div>
 							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
+								<img src="imgs/gallery/2.jpg">
 							</div>
 							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
+								<img src="imgs/gallery/3.jpg">
 							</div>
 							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
+								<img src="imgs/gallery/4.jpg">
 							</div>	
 							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
+								<img src="imgs/gallery/5.jpg">
 							</div>
-							<div class="swiper-slide">
-								<img src="imgs/contacts.jpg">
-							</div>	
 						</div>
 					</div>
 					
@@ -136,32 +137,124 @@
 			</section>
 
 			<!-- 2: services -->
-			<section class="backgrounds__item backgrounds__item-services services" style="display: none">
+			<section class="backgrounds__item backgrounds__item-services services">
 				<div class="backgrounds__back-color"></div>
-			
-				<section class="services__lists">
-					<ul class= "services__list">
-						<li>Лепной декор</li>
-						<li>Реставрация лепного декора</li>
-						<li>Скульптура</li>
-					</ul>
-					<ul class="services__list">
-						<li>Живопись</li>
-						<li>Реставрация живописи</li>
-						<li>Золочение</li>
-					</ul>
-					<ul class="services__list">
-						<li>Декор из бетона</li>
-						<li>Дизайн-проекты</li>
-						<li>Отделочные работы</li>
-					</ul>
-				</section>
+				
+				<div class="services__backgrounds">
+					<div class="services__background" data-key="1"></div>
+					<div class="services__background" data-key="2"></div>
+					<div class="services__background" data-key="3"></div>
+					<div class="services__background" data-key="4"></div>
+					<div class="services__background" data-key="5"></div>
+					<div class="services__background" data-key="6"></div>
+					<div class="services__background" data-key="7"></div>
+					<div class="services__background" data-key="8"></div>
+					<div class="services__background" data-key="9"></div>
+				</div>
 
-				<div class="services__info">
-					<div class="services__title"></div>
-						Test
-					<div class="services__text">
-						Test text
+				<div class="backgrounds__item-container">
+					<section class="services__list">
+						<a href="" onclick="showService(1)">Лепной декор</a>
+						<a href="" onclick="showService(4)">Реставрация лепного декора</a>
+						<a href="" onclick="showService(7)">Скульптура</a>
+						<a href="" onclick="showService(2)">Живопись</a>
+						<a href="" onclick="showService(5)">Реставрация живописи</a>
+						<a href="" onclick="showService(8)">Золочение</a>
+						<a href="" onclick="showService(3)">Декор из бетона</a>
+						<a href="" onclick="showService(6)">Дизайн-проекты</a>
+						<a href="" onclick="showService(9)">Отделочные работы</a>
+					</section>
+					
+					<div class="services__list-info">
+						<div class="services__title">Title</div>
+						<div class="services__text">
+							dsa dsa dssa dsa sdsa
+							dsdasd d sads dsa s sada sads sad as s d
+							s sd sa ds sa dsdssds s ssssssssss dsadsad sdsa ds
+							sd asdsadssd fgnfdlvdjf bl bfidb diufsabi fsa9uf a
+						</div>
+
+						<button class="services__back-button" onclick="hideService()">
+							<i class="fal fa-long-arrow-left"></i>
+						</button>
+					</div>
+
+					<div class="swiper-container services-swiper-container">
+						<button class="services__button main-pagination__button main-pagination__button-prev"></button>
+						<button class="services__button main-pagination__button main-pagination__button-next"></button>
+						
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="services__title">Лепной декор</div>
+								<div class="services__text">
+									Лепной декор или лепнина – это объемные (рельефные) 
+									композиции и украшения на фасадах зданий и/или внутри него.
+								</div>
+							</div>
+
+							<div class="swiper-slide">
+								<div class="services__title">Живопись</div>
+								<div class="services__text">
+									Ремонт и реставрация гипсовой лепнины выполняется на 
+									исторических фасадах и в интерьерах не только в постройках 
+									дореволюционного или сталинского времени, но и в зданиях 
+									современной эпохи.
+								</div>
+							</div>
+							
+							<div class="swiper-slide">
+								<div class="services__title">Декор из бетона</div>
+								<div class="services__text">
+									Делаем любые декоративные изделия любых типов и любой сложности.
+								</div>
+							</div>
+
+							<div class="swiper-slide">
+								<div class="services__title">Реставрация лепного декора</div>
+								<div class="services__text">
+									Ремонт и реставрация гипсовой лепнины выполняется на исторических фасадах 
+									и в интерьерах не только в постройках дореволюционного или 
+									сталинского времени, но и в зданиях современной эпохи
+								</div>
+							</div>
+
+							<div class="swiper-slide">
+								<div class="services__title">Реставрация живописи</div>
+								<div class="services__text">
+									
+								</div>
+							</div>
+
+							<div class="swiper-slide">
+								<div class="services__title">Дизайн-проекты</div>
+								<div class="services__text">
+									Проектирование под ключ. Создадим уникальный проект, 
+									индивидуальный проект для каждого клиента.
+								</div>
+							</div>
+							
+							<div class="swiper-slide">
+								<div class="services__title">Скульптура</div>
+								<div class="services__text">
+									Наша мастерская изготавливает на заказ 
+									статуэтки, бюсты, торсы, статуи из гипса.
+								</div>
+							</div>
+
+							<div class="swiper-slide">
+								<div class="services__title">Золочение</div>
+								<div class="services__text">
+									Золочением осуществляют и 
+									реставрацию золотых украшений и придают более 
+									эффектный внешний вид новым украшениям.
+								</div>
+							</div>
+
+							<div class="swiper-slide">
+								<div class="services__title">Отделочные работы</div>
+								<div class="services__text">Text</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -175,42 +268,74 @@
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<div class="backgrounds__back-color"></div>
-							
-							<div class="projects__title">Title</div>
-							<div class="projects__text">
-								Text text text text texte text etefafsasfs fs sfassf saf sa ss asa f 
-								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
-								sfsafasfas afsfsf sfsfssss sffsasf asfas sfas fasassf as afs.
-							</div>
+					
+							<img class="projects__image" src="imgs/projects/1.jpg">
+							<div class="projects__title">Государственный музей-заповедник <br> «Царское Село»</div>
 						</div>
 						
 						<div class="swiper-slide">
 							<div class="backgrounds__back-color"></div>
 							
-							<div class="projects__title">Title</div>
-							<div class="projects__text">
-								Text text text text texte text etefafsasfs fs sfassf saf sa ss asa f 
-								sfsafasfas afsfsf sfsfssss sffsasf asfas sfas fasassf as afs.
-								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
-								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
-								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
-								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
-								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
-							</div>
+							<img class="projects__image" src="imgs/projects/2.jpg">
+							<div class="projects__title">Церковь святого Пантелеймона</div>
 						</div>
 						
 						<div class="swiper-slide">
 							<div class="backgrounds__back-color"></div>
 							
-							<div class="projects__title">Title</div>
-							<div class="projects__text">
-								Text text text text texte text etefafsasfs fs sfassf saf sa ss asa f 
-								fsafsfasf safsa  asf sasaf sfaasfsa sfsa fssa fsafsf fasfsfasf
-								sfsafasfas afsfsf sfsfssss sffsasf asfas sfas fasassf as afs.
-							</div>
+							<img class="projects__image" src="imgs/projects/3.jpg">
+							<div class="projects__title">Русский торгово-промышленный банк</div>
 						</div>	
+
+						<div class="swiper-slide">
+							<div class="backgrounds__back-color"></div>
+							
+							<img class="projects__image" src="imgs/projects/4.jpg">
+							<div class="projects__title">Частные квартиры и коттеджи</div>
+						</div>
+
+						<div class="swiper-slide">
+							<div class="backgrounds__back-color"></div>
+							
+							<img class="projects__image" src="imgs/projects/5.jpg">
+							<div class="projects__title">Консерватория им. Чайковского. <br> Концертный зал</div>
+						</div>
+						
+						<div class="swiper-slide">
+							<div class="backgrounds__back-color"></div>
+							
+							<img class="projects__image" src="imgs/projects/6.jpg">
+							<div class="projects__title">Большой театр</div>
+						</div>
+						
+						<div class="swiper-slide">
+							<div class="backgrounds__back-color"></div>
+							
+							<img class="projects__image" src="imgs/projects/7.jpg">
+							<div class="projects__title">Музей хоккейной славы</div>
+						</div>
+
+						<div class="swiper-slide">
+							<div class="backgrounds__back-color"></div>
+							
+							<img class="projects__image" src="imgs/projects/8.jpg">
+							<div class="projects__title">Коттеджи и квартиры</div>
+						</div>
+						
+						<div class="swiper-slide">
+							<div class="backgrounds__back-color"></div>
+							
+							<img class="projects__image" src="imgs/projects/9.jpg">
+							<div class="projects__title">Кремль. Екатерининский зал</div>
+						</div>
+					
+						<div class="swiper-slide">
+							<div class="backgrounds__back-color"></div>
+							
+							<img class="projects__image" src="imgs/projects/10.jpg">
+							<div class="projects__title">Кинотеатр "Украина"</div>
+						</div>
 					</div>
-				
 				</div>
 			
 				<!-- pagination -->
@@ -355,9 +480,19 @@
 				nextEl: ".gallery .main-pagination__button-next",
 				prevEl: ".gallery .main-pagination__button-prev",
 			},
-
-			resistanceRatio: 0,
 			
+			resistanceRatio: 0,
+			slidesPerView: 'auto',
+
+			breakpoints: {
+				0: {
+					spaceBetween: 32
+				},
+				768: {
+					spaceBetween: 0
+				}
+			},
+
 			pagination: {
 				el: ".gallery__pagination"
 			}
@@ -389,91 +524,82 @@
 			}
 		});
 
-		//		
+		// services slider
+		
+		var servicesSwiper = new Swiper('.services-swiper-container', {
+			navigation: {
+				nextEl: ".services .main-pagination__button-next",
+				prevEl: ".services .main-pagination__button-prev",
+			},
 
-		var projects = [
+			speed: 500,
+			simulateTouch: false,
+			allowTouchMove: true,		
+			resistanceRatio: 0
+		});
+	
+		function showService(index)
+		{
+			event.preventDefault();
+			
+			if (window.innerWidth >= mobileWidth)
+				servicesSwiper.slideTo(index - 1);
+			else
 			{
-				title: "1",
-				text: "1 text"
+				
+				$(".services__list-info .services__title").text(services[index - 1].title);
+				$(".services__list-info .services__text" ).text(services[index - 1].text );
+
+				$(".services__list"     ).css("transform", "translateX(-100%)");
+				$(".services__list-info").css("transform", "translateX(0)");
+			}
+		}
+
+		function hideService()
+		{
+			$(".services__list"     ).css("transform", "translateX(0)");
+			$(".services__list-info").css("transform", "translateX(100%)");
+		}
+
+		var services = [
+			{
+				title: "Лепной декор",
+				text: "Лепной декор- это объёмные( рельефные) композиции и украшения на фасадах зданий или внутри него. Делаем колонны, розетки, тяги, фризы и многое другое."
 			},
 			{
-				title: "2",
-				text: "2 text"
+				title: "Живопись",
+				text: "Выполняем работы любой сложности, станковая, альфрейная,так же делаем реставрационные работы живописи."
 			},
 			{
-				title: "3",
-				text: "3 text"
+				title: "Декор из бетона",
+				text: "Делаем любые декоративные изделия любых типов и любой сложности."
 			},
 			{
-				title: "4",
-				text: "4 text"
+				title: "Реставрация лепного декора",
+				text: "Ремонт и реставрация гипсовой лепнины выполняется на исторических фасадах и в интерьерах не только в постройках дореволюционного или сталинского времени, но и в зданиях современной эпохи."
 			},
 			{
-				title: "5",
-				text: "5 text"
+				title: "Реставрация живописи",
+				text: "Восстанавливаем любую живопись любой сложности в короткие сроки."
+			},
+			{
+				title: "Дизайн-проекты",
+				text: "Проектирование под ключ. Создадим уникальный проект, индивидуальный проект для каждого клиента."
+			},
+			{
+				title: "Скульптура",
+				text: "Наша мастерская изготавливает на заказ статуэтки, бюсты, торсы, статуи из гипса."
+			},
+			{
+				title: "Золочение",
+				text: "Золочением осуществляют и реставрацию золотых украшений и придают более эффектный внешний вид новым украшениям."
+			},
+			{
+				title: "Отделочные работы",
+				text: "Занимаемся отделкой квартир, выравнивание стен, электрика, сантехника, шпаклёвка и многое другое."
 			}
 		];
 		
-		/*
-		
-		$(".projects__title").text(projects[0].title);
-		$(".projects__text").text(projects[0].text);
-
-		var curProjectIndex = null;
-
-		$(".projects__list a").hover(function() {
-			if ($(this).attr("data-key") == curProjectIndex)
-				return;
-
-			anime({
-				targets: '.projects__title',
-				translateY: 40,
-				opacity: 0,
-				easing: 'easeInOutExpo',
-				duration: 200
-			});
-
-			anime({
-				targets: '.projects__text',
-				translateY: 40,
-				opacity: 0,
-				easing: 'easeInOutExpo',
-				duration: 200
-			});
-
-			curProjectIndex = $(this).attr("data-key");
-
-			setTimeout(showProjectInfo, 400);
-
-		});
-
-		function showProjectInfo()
-		{
-			let prTitle = projects[curProjectIndex].title;
-			let prText  = projects[curProjectIndex].text;
-
-			$(".projects__title").text(prTitle);
-			$(".projects__text").text(prText);
-
-			anime({
-				targets: '.projects__title',
-				translateY: 0,
-				opacity: 1,
-				easing: 'easeInOutExpo',
-				duration: 200
-			});
-	
-			anime({
-				targets: '.projects__text',
-				translateY: 0,
-				opacity: 1,
-				easing: 'easeInOutExpo',
-				duration: 200
-			});
-		}
-
-		*/
-
 		// for f*cking movement of mobile keyboard support
 	
 		var curHeight = window.innerHeight;
@@ -504,9 +630,26 @@
 				$("body").removeClass("viewing-header");
 
 			curBot += 100 * index - curBot;
+			
+			//
+
+			$("body").removeClass();
+
+			$(".pagination__item--active")
+				.removeClass("pagination__item--active")	
+			$(".pagination__item").eq(curBot / 100)
+				.addClass("pagination__item--active");
+
+			//
 
 			whenScroll();
-			
+	
+			$(".pagination__item--active")
+				.removeClass("pagination__item--active")	
+			$(".pagination__item").eq(curBot / 100)
+				.addClass("pagination__item--active");
+
+			//		
 			if (isNavigationActive)
 			{
 				hideNavigation();
