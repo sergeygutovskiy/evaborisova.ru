@@ -12,7 +12,7 @@ var pageTitles = [
 ];
 
 var pageURIs = [
-	"",
+	"#",
 	"#gallery",
 	"#services",
 	"#projects",
