@@ -651,7 +651,7 @@
 			if (window.innerWidth < mobileWidth && window.innerHeight < curHeight)
 			{
 				$(".contacts__container")
-					.css("transform", "translateY(-" + (curHeight - window.innerHeight)  + "px)");
+					.css("transform", "translateY(-240px)"); // + (curHeight - window.innerHeight)  + "px)");
 				curHeight = window.innerHeight;	
 			}
 			else if (window.innerWidth < mobileWidth && window.innerHeight > curHeight)
