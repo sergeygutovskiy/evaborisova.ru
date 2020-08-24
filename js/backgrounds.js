@@ -94,8 +94,6 @@ $(function() {
 function navDown() {
 	curBot += 100;
 
-	console.log(1);
-
 	whenScroll();
 	
 	scrollable = false;

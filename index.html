@@ -28,7 +28,7 @@
 		const mobileWidth = 768;
 	</script>
 
-	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/css/styles.min.css">
 
 	<script src="/js/backgrounds.js"></script>
 
@@ -112,8 +112,12 @@
 				
 				<div class="backgrounds__item-container">
 					<!-- left/right buttons -->
-					<button class="gallery__button main-pagination__button main-pagination__button-prev"></button>
-					<button class="gallery__button main-pagination__button main-pagination__button-next"></button>
+					<button class="gallery__button main-pagination__button main-pagination__button-prev">
+						<i class="fal fa-chevron-left"></i>
+					</button>
+					<button class="gallery__button main-pagination__button main-pagination__button-next">
+						<i class="fal fa-chevron-right"></i>
+					</button>
 					
 					<div class="swiper-container gallery-swiper-container">
 						<div class="swiper-wrapper">
@@ -184,8 +188,12 @@
 					</div>
 
 					<div class="swiper-container services-swiper-container">
-						<button class="services__button main-pagination__button main-pagination__button-prev"></button>
-						<button class="services__button main-pagination__button main-pagination__button-next"></button>
+						<button class="services__button main-pagination__button main-pagination__button-prev">
+							<i class="fal fa-chevron-left"></i>
+						</button>
+						<button class="services__button main-pagination__button main-pagination__button-next">
+							<i class="fal fa-chevron-right"></i>
+						</button>
 						
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
@@ -267,8 +275,12 @@
 
 			<!-- 3: projects -->
 			<section class="backgrounds__item backgrounds__item-projects projects">
-				<button class="projects__button main-pagination__button main-pagination__button-prev"></button>
-				<button class="projects__button main-pagination__button main-pagination__button-next"></button>
+				<button class="projects__button main-pagination__button main-pagination__button-prev">
+					<i class="fal fa-chevron-left"></i>
+				</button>
+				<button class="projects__button main-pagination__button main-pagination__button-next">
+					<i class="fal fa-chevron-right"></i>
+				</button>
 				
 				<div class="swiper-container projects-swiper-container">
 					<div class="swiper-wrapper">
@@ -388,9 +400,9 @@
 				<div class="backgrounds__item-container">
 					<div class="contacts__container">
 						<form class="contacts__form">
-							<input type="text" name="name"  placeholder="Имя">
-							<input type="text" name="phone" placeholder="Телефон">
-							<input type="text" name="email" placeholder="Почта">
+							<input type="text" autocomplete="off" name="name"  placeholder="Имя">
+							<input type="text" autocomplete="off" name="phone" placeholder="Телефон">
+							<input type="text" autocomplete="off" name="email" placeholder="Почта">
 
 							<button>
 								Отправить
@@ -657,8 +669,6 @@
 		{
 			let index = pageURIs.indexOf( $(el).attr("href"));
 
-			console.log(index);
-				
 			if (curBot == 0)
 				$("body").removeClass("viewing-header");
 

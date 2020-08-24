@@ -171,12 +171,12 @@ h2 {
 	top: 50%;
 	transform: translateY(-50%);
 	
-	height: 57px;
-	width: 24px;
-	
+	font-size: 60px;
+	color: white;
+
 	border: none;
-	background-image: url(../imgs/swiper-arrow.png);
-	background-size: cover;
+	padding: 0;
+
 	background-color: transparent;
 
 	opacity: 0.85;
@@ -194,7 +194,6 @@ h2 {
 
 .main-pagination__button-next {
 	right: 0;
-	transform: translateY(-50%) rotate(180deg);
 }
 
 .main-pagination__button.swiper-button-disabled {
@@ -220,8 +219,7 @@ h2 {
 	}
 
 	.main-pagination__button {
-		height: 32px;
-		width: 12px;
+		font-size: 32px;
 	}
 }
 
@@ -731,9 +729,7 @@ nav {
 	}
 
 	.bottom-created-by {
-		right: unset;
-		left: 16px;
-
+		right: 16px;
 		font-size: 16px;
 	}
 }
@@ -873,12 +869,14 @@ nav {
 		width: 100%;
 
 		padding-left: 16px;
+		overflow: visible;
 
 		box-shadow: none;
 	}
 
 	.gallery .swiper-slide {
 		width: calc(100% - 16px * 4);
+		box-shadow: 0px 0px 6px 4px #0000004f;
 	}	
 }
 
@@ -1221,9 +1219,13 @@ nav {
 	}
 
 	.contacts__form {
+		margin-bottom: auto;
+
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+
+		padding-top: 32px;
 	}
 
 	.contacts__form input {
