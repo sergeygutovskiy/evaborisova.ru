@@ -42,7 +42,7 @@
 
 @font-face {
 	font-family: Naruto;
-	src: url(../fonts/Naruto/Nunito-Medium.ttf);
+	src: url(../fonts/Naruto/Nunito-SemiBold.ttf);
 	font-weight: 500;
 }
 
@@ -76,6 +76,7 @@ body {
 	font-size: 16px;
 	font-family: "Montserrat Alternates", sans-serif;
 	font-weight: 300;
+	-webkit-tap-highlight-color: transparent;
 }
 
 input, input::placeholder, button, textarea {
@@ -131,10 +132,10 @@ h2 {
 	width: 100%;
 	height: 100%;
 	
-	backdrop-filter: blur(8px); 
+	/* backdrop-filter: blur(8px); */
 	
 	opacity: 0;
-	transition: 800ms ease;
+	/* transition: opacity 200ms ease; */
 }
 
 /*
@@ -373,13 +374,18 @@ nav {
 	width: 100%;
 	height: calc(100% + 24px);
 
-	background-image: url("../imgs/header.jpg");
 	background-size: cover;
 	background-position-y: 0;
 
 	opacity: 0;
 	transition: opacity 250ms linear, background-position-y 250ms linear;
 }
+
+.nav__link:nth-child(1) a::before { background-image: url("../imgs/header.jpg"); }
+.nav__link:nth-child(2) a::before { background-image: url("../imgs/services/1.jpg"); }
+.nav__link:nth-child(3) a::before { background-image: url("../imgs/projects/1.jpg"); }
+.nav__link:nth-child(4) a::before { background-image: url("../imgs/about.jpg"); }
+.nav__link:nth-child(5) a::before { background-image: url("../imgs/services/5.jpg"); }
 
 .nav__links--active > .nav__link > a:hover::before {
 	opacity: 1;
@@ -545,6 +551,10 @@ nav {
 	.nav__page-title {
 		display: none;
 	}
+
+	.nav__link > a::before {
+		background: none;
+	}
 }
 
 /*
@@ -685,6 +695,9 @@ nav {
 	bottom: 16px;
 
 	font-size: 18px;
+}
+
+.bottom-phone a {
 	font-weight: 500;
 }
 
@@ -855,11 +868,50 @@ nav {
 	display: flex;
 }
 
+.services .backgrounds__back-color {
+	z-index: 1;
+}
+
 .services .backgrounds__item-container {
+	z-index: 1;
+	
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
+.services__backgrounds {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+}
+
+.services__background {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	
+	background-size: cover;
+
+	opacity: 0;
+	transition: opacity 400ms ease;
+}
+
+.services__background:nth-child(1) { background-image: url("../imgs/services/1.jpg"); }
+.services__background:nth-child(2) { background-image: url("../imgs/services/4.jpg"); }
+.services__background:nth-child(3) { background-image: url("../imgs/services/7.jpg"); }
+.services__background:nth-child(4) { background-image: url("../imgs/services/2.jpg"); }
+.services__background:nth-child(5) { background-image: url("../imgs/services/5.jpg"); }
+.services__background:nth-child(6) { background-image: url("../imgs/services/8.jpg"); }
+.services__background:nth-child(7) { background-image: url("../imgs/services/3.jpg"); }
+.services__background:nth-child(8) { background-image: url("../imgs/services/6.jpg"); }
+.services__background:nth-child(9) { background-image: url("../imgs/services/9.jpg"); }
 
 .services__list {
 	display: grid;
@@ -961,6 +1013,19 @@ nav {
 		font-size: 24px;	
 	}
 }
+
+@media screen and (max-height: 568px)
+{
+	.services__back-button {
+		bottom: 16px;
+	}
+
+	.services__list-info {
+		justify-content: flex-start;
+		padding-top: 32px;
+	}
+}
+
 /*
  *
  *
@@ -1064,9 +1129,13 @@ nav {
 
 @media screen and (max-width: 768px)
 {
+	.contacts .backgrounds__item-container {
+		margin-bottom: 16px;
+	}
 
 	.contacts__container {
-		justify-content: space-around;
+		justify-content: space-between;
+		padding-top: 32px;
 		
 		height: 100%;
 	}

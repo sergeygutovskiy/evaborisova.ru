@@ -141,15 +141,15 @@
 				<div class="backgrounds__back-color"></div>
 				
 				<div class="services__backgrounds">
-					<div class="services__background" data-key="1"></div>
-					<div class="services__background" data-key="2"></div>
-					<div class="services__background" data-key="3"></div>
-					<div class="services__background" data-key="4"></div>
-					<div class="services__background" data-key="5"></div>
-					<div class="services__background" data-key="6"></div>
-					<div class="services__background" data-key="7"></div>
-					<div class="services__background" data-key="8"></div>
-					<div class="services__background" data-key="9"></div>
+					<div class="services__background" style="opacity: 1"></div>
+					<div class="services__background"></div>
+					<div class="services__background"></div>
+					<div class="services__background"></div>
+					<div class="services__background"></div>
+					<div class="services__background"></div>
+					<div class="services__background"></div>
+					<div class="services__background"></div>
+					<div class="services__background"></div>
 				</div>
 
 				<div class="backgrounds__item-container">
@@ -526,12 +526,30 @@
 
 		// services slider
 		
+		var currentService = 0;
+	
+		function onServiceChanged(newIndex)
+		{
+			if (newIndex == currentService) return;
+
+			$(".services__background").eq(newIndex).css("opacity", "1");
+			$(".services__background").eq(currentService).css("opacity", "0");
+		
+			currentService = newIndex;
+		}
+
 		var servicesSwiper = new Swiper('.services-swiper-container', {
 			navigation: {
 				nextEl: ".services .main-pagination__button-next",
 				prevEl: ".services .main-pagination__button-prev",
 			},
-
+			
+			on: {
+				slideChange: function () {
+					// onServiceChanged(this.activeIndex + 1);	
+				},
+			},
+			
 			speed: 500,
 			simulateTouch: false,
 			allowTouchMove: true,		
@@ -541,12 +559,16 @@
 		function showService(index)
 		{
 			event.preventDefault();
-			
+		
 			if (window.innerWidth >= mobileWidth)
+			{
+				onServiceChanged(index - 1);
 				servicesSwiper.slideTo(index - 1);
+			}
 			else
 			{
-				
+				onServiceChanged(index - 1);
+
 				$(".services__list-info .services__title").text(services[index - 1].title);
 				$(".services__list-info .services__text" ).text(services[index - 1].text );
 
