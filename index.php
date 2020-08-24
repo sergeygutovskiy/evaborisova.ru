@@ -399,10 +399,10 @@
 			<section class="backgrounds__item backgrounds__item-contacts contacts">
 				<div class="backgrounds__item-container">
 					<div class="contacts__container">
-						<form class="contacts__form">
-							<input type="text" autocomplete="off" name="name"  placeholder="Имя">
-							<input type="text" autocomplete="off" name="phone" placeholder="Телефон">
-							<input type="text" autocomplete="off" name="email" placeholder="Почта">
+						<form class="contacts__form" autocomplete="off">
+							<input type="text" name="name"  placeholder="Имя">
+							<input type="text" name="phone" placeholder="Телефон">
+							<input type="text" name="email" placeholder="Почта">
 
 							<button>
 								Отправить
@@ -650,9 +650,9 @@
 		window.addEventListener('resize', function(event){
 			if (window.innerWidth < mobileWidth && window.innerHeight < curHeight)
 			{
-				// $(".contacts__container")
-				//	.css("transform", "translateY(-240px)"); // + (curHeight - window.innerHeight)  + "px)");
-				// curHeight = window.innerHeight;	
+				$(".contacts__container")
+					.css("transform", "translateY(-" + (curHeight - window.innerHeight)  + "px)");
+				curHeight = window.innerHeight;	
 			}
 			else if (window.innerWidth < mobileWidth && window.innerHeight > curHeight)
 			{
