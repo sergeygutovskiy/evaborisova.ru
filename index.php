@@ -28,7 +28,7 @@
 		const mobileWidth = 768;
 	</script>
 
-	<link rel="stylesheet" type="text/css" href="/css/styles.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 
 	<script src="/js/backgrounds.js"></script>
 

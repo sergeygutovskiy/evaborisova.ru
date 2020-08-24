@@ -548,7 +548,13 @@ nav {
 	}
 
 	.nav__page-title {
-		display: none;
+		/* display: none; */
+		
+		top: 50px;
+		padding-left: 16px;
+		text-align: left;
+
+		font-size: 22px;
 	}
 
 	.nav__link > a::before {
@@ -658,7 +664,9 @@ nav {
 	.backgrounds__item-container {
 		margin-left: 16px;
 		margin-right: 16px;
-		margin-top: 42px;
+
+		/* margin-top: 42px; */
+		margin-top: 80px;
 	}
 }
 
