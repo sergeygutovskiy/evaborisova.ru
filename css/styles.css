@@ -1216,7 +1216,7 @@ nav {
 	}
 }
 
-@media screen and (max-height: 568px)
+@media screen and (max-height: 568px) and (max-width: 320px)
 {
 	.contacts__list {
 		font-size: 12px;
