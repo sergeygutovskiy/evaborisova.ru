@@ -695,16 +695,42 @@ nav {
 	right: 83px;
 	bottom: 16px;
 
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .bottom-phone a {
 	font-weight: 500;
 }
 
+.viewing-contacts .bottom-created-by {
+	display: block;
+}
+
+.bottom-created-by {
+	display: none; 
+	z-index: 15;
+	
+	position: fixed;
+	right: 83px;
+	bottom: 16px;
+
+	font-size: 16px;
+}
+
+.bottom-created-by a {
+	font-weight: 500;
+}
+
 @media screen and (max-width: 768px)
 {
 	.bottom-phone {
+		right: unset;
+		left: 16px;
+
+		font-size: 16px;
+	}
+
+	.bottom-created-by {
 		right: unset;
 		left: 16px;
 
@@ -920,6 +946,8 @@ nav {
 	grid-template-rows: 1fr 1fr 1fr;
 	grid-gap: 20px 100px;
 
+	font-weight: 400;
+
 	transition: transform 300ms ease;
 }
 
@@ -1099,7 +1127,7 @@ nav {
 	background-color: transparent;
 	
 	color: #FFCC66;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 500;
 
 	transition: all 150ms ease;

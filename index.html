@@ -77,6 +77,10 @@
 			<a class="golden-rain" href="tel:+79673307462">+7 (967) 330 74 62</a>
 		</div>
 
+		<div class="bottom-created-by">
+			<a href="https://terexov.agency">terexov.agency</a>
+		</div>
+
 		<!-- pages side pagination -->
 		<div class="pagination">
 			<div class="pagination__item pagination__item--active"></div>
@@ -221,8 +225,7 @@
 							<div class="swiper-slide">
 								<div class="services__title">Реставрация живописи</div>
 								<div class="services__text">
-									
-								</div>
+									Восстанавливаем любую живопись любой сложности в короткие сроки.								              </div>
 							</div>
 
 							<div class="swiper-slide">
@@ -252,7 +255,10 @@
 
 							<div class="swiper-slide">
 								<div class="services__title">Отделочные работы</div>
-								<div class="services__text">Text</div>
+								<div class="services__text">
+									Занимаемся отделкой квартир, выравнивание стен, электрика, 
+									сантехника, шпаклёвка и многое другое.
+								</div>
 							</div>
 						</div>
 					</div>
@@ -544,6 +550,12 @@
 				prevEl: ".services .main-pagination__button-prev",
 			},
 			
+			on: {
+				slideChange: function() {
+					onServiceChanged(this.activeIndex);
+				}
+			},
+
 			speed: 500,
 			simulateTouch: false,
 			allowTouchMove: true,		
@@ -558,8 +570,7 @@
 			{
 				onServiceChanged(index - 1);
 
-				let speed =  300 + Math.abs((index - 1) - servicesSwiper.activeIndex) * 250 - 250;
-				console.log(speed);
+				let speed =  500 + Math.abs((index - 1) - servicesSwiper.activeIndex) * 250 - 250;
 
 				servicesSwiper.slideTo(index - 1, speed);
 			}
