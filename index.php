@@ -1,12 +1,19 @@
 <html>
 <head>
-	<title>Eva Borisova</title>
+	<title>EvaBorisova</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<!-- font for logo -->
-	<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+	<!-- yandex webmaster -->
+	<meta name="yandex-verification" content="37f9b3be0b9f9c53" />
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+
+	<!-- seo description -->
+	<meta name="description" 
+	content="С 1990 года мы реставрируем дворцы, поместья, коттеджи, квартиры. Всегда ищем индивидуальный подход к каждому клиенту.">
 
 	<!-- swiper -->
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
@@ -21,15 +28,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<!-- font awesome-->
-	<link rel="stylesheet" href="fonts/css/all.min.css">
+	<link rel="stylesheet" href="fonts/FontAwesome/css/all.min.css">
 	
-
 	<script>
 		const mobileWidth = 768;
 	</script>
 
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
-
 	<script src="/js/backgrounds.js"></script>
 
 </head>
@@ -56,7 +61,7 @@
 				<li class="nav__link"><a href="#contacts" onclick="changePage(this)">Контакты</a></li>
 			</ul>
 		
-			<div class="nav__page-title"></div>
+			<h3 class="nav__page-title"></h3>
 
 			<div class="nav__phone">
 				<a href="tel:+79673307462">+7 (967) 330 74 62</a>
@@ -73,13 +78,9 @@
 		</nav>
 
 		<!-- bottom phone number for all pages expept header -->
-		<div class="bottom-phone">
-			<a class="golden-rain" href="tel:+79673307462">+7 (967) 330 74 62</a>
-		</div>
+		<div class="bottom-phone"><a href="tel:+79673307462" class="golden-rain">+7 (967) 330 74 62</a></div>
 
-		<div class="bottom-created-by">
-			<a href="https://terexov.agency">terexov.agency</a>
-		</div>
+		<div class="bottom-created-by"><a href="https://terexov.agency">terexov.agency</a></div>
 
 		<!-- pages side pagination -->
 		<div class="pagination">
@@ -112,12 +113,8 @@
 				
 				<div class="backgrounds__item-container">
 					<!-- left/right buttons -->
-					<button class="gallery__button main-pagination__button main-pagination__button-prev">
-						<i class="fal fa-chevron-left"></i>
-					</button>
-					<button class="gallery__button main-pagination__button main-pagination__button-next">
-						<i class="fal fa-chevron-right"></i>
-					</button>
+					<button class="gallery__button main-pagination__button main-pagination__button-prev"></button>
+					<button class="gallery__button main-pagination__button main-pagination__button-next"></button>
 					
 					<div class="swiper-container gallery-swiper-container">
 						<div class="swiper-wrapper">
@@ -174,7 +171,7 @@
 					</section>
 					
 					<div class="services__list-info">
-						<div class="services__title">Title</div>
+						<h2 class="services__title">Title</h2>
 						<div class="services__text">
 							dsa dsa dssa dsa sdsa
 							dsdasd d sads dsa s sada sads sad as s d
@@ -188,12 +185,8 @@
 					</div>
 
 					<div class="swiper-container services-swiper-container">
-						<button class="services__button main-pagination__button main-pagination__button-prev">
-							<i class="fal fa-chevron-left"></i>
-						</button>
-						<button class="services__button main-pagination__button main-pagination__button-next">
-							<i class="fal fa-chevron-right"></i>
-						</button>
+						<button class="services__button main-pagination__button main-pagination__button-prev"></button>
+						<button class="services__button main-pagination__button main-pagination__button-next"></button>
 						
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
@@ -275,12 +268,8 @@
 
 			<!-- 3: projects -->
 			<section class="backgrounds__item backgrounds__item-projects projects">
-				<button class="projects__button main-pagination__button main-pagination__button-prev">
-					<i class="fal fa-chevron-left"></i>
-				</button>
-				<button class="projects__button main-pagination__button main-pagination__button-next">
-					<i class="fal fa-chevron-right"></i>
-				</button>
+				<button class="projects__button main-pagination__button main-pagination__button-prev"></button>
+				<button class="projects__button main-pagination__button main-pagination__button-next"></button>
 				
 				<div class="swiper-container projects-swiper-container">
 					<div class="swiper-wrapper">
@@ -409,10 +398,15 @@
 							</button>
 						</form>
 						<ul class="contacts__list">
-							<li class="golden-rain">+7 (967) 330 74 62</li>
+							<li>
+								<a class="golden-rain" href="tel:+79673307462">+7 (967) 330 74 62</a>
+							</li>
 							<li class="golden-rain">г. Санкт-Петербург, ул. Профессора Попова, д. 26</li>
 							<li>Для связи с нами: <span class="golden-rain"> EvaBorisova2018@yandex.ru </span></li>
-							<li>Мы в instagram: <span class="golden-rain"> @anastasiiam514 </span></li>
+							<li>
+								Мы в instagram: 
+								<a href="https://www.instagram.com/eva_b____/" class="golden-rain">@eva_b____</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -512,7 +506,8 @@
 			},
 
 			pagination: {
-				el: ".gallery__pagination"
+				el: ".gallery__pagination",
+				clickable: true
 			}
 		});
 
@@ -538,7 +533,8 @@
 			},
 
 			pagination: {
-				el: ".projects__pagination"
+				el: ".projects__pagination",
+				clickable: true
 			}
 		});
 
@@ -563,9 +559,7 @@
 			},
 			
 			on: {
-				slideChange: function() {
-					onServiceChanged(this.activeIndex);
-				}
+				slideChange: function() { onServiceChanged(this.activeIndex); }
 			},
 
 			speed: 500,
